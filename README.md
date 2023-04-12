@@ -10,4 +10,4 @@ https://www.udemy.com/course/phpbeginnertolaravel/
 ## 環境
 - MAMP
 - Laravel 9
-
+- DB：laravel_task
