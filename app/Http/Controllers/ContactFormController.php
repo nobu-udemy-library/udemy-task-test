@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\ContactForm;
 
 class ContactFormController extends Controller
 {
@@ -34,7 +35,21 @@ class ContactFormController extends Controller
    */
   public function store(Request $request)
   {
-    dd($request);
+    // dd($request);
+
+    // https: //readouble.com/laravel/10.x/ja/eloquent.html#mass-assignment
+    // クリエイトでDBへ値を追加するには複数代入への脆弱性の対策をする必要がある
+    ContactForm::create([
+      'name' => $request->name,
+      'title' => $request->title,
+      'email' => $request->email,
+      'url' => $request->url,
+      'gender' => $request->gender,
+      'age' => $request->age,
+      'contact' => $request->contact,
+    ]);
+
+    return to_route('contacts.index');
   }
 
   /**
