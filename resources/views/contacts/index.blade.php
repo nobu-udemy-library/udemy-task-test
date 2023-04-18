@@ -38,7 +38,7 @@
                       {{ $contact->created_at }}
                     </td>
                     <td class="border-t-2 border-gray-200 px-4 py-3 text-lg text-gray-900">
-                      <a href="{{ route('contacts.show', ['id' => $contact->id]) }}">詳細を見る</a>
+                      <a href="{{ route('contacts.show', ['id' => $contact->id]) }}" class="text-blue-500">詳細を見る</a>
                     </td>
                   </tr>
                 @endforeach
