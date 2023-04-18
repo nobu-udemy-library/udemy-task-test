@@ -16,9 +16,18 @@ use App\Http\Controllers\ContactFormController;
 |
 */
 
-Route::get('tests/test', [TestController::class, 'index']);
+Route::get('/tests/test', [TestController::class, 'index']);
 
-Route::resource('contacts', ContactFormController::class);
+// Route::resource('contacts', ContactFormController::class);
+
+// グループ化することで、スコープ内のルーティングに同じ設定を適用出来る！
+Route::prefix('contacts')
+  ->middleware(['auth'])
+  ->controller(ContactFormController::class)
+  ->name('contacts.')
+  ->group(function () {
+    Route::get('/', 'index')->name('index');
+  });
 
 Route::get('/', function () {
   return view('welcome');
