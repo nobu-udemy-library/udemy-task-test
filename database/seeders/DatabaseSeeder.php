@@ -21,6 +21,8 @@ class DatabaseSeeder extends Seeder
       UserSeeder::class,
       AreaSeeder::class,
       ShopSeeder::class,
+      RouteSeeder::class,
+      RouteShopSeeder::class,
     ]);
 
     //* Factoryを使ってダミーデータを作成する
