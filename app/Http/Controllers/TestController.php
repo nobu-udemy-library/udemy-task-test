@@ -11,12 +11,12 @@ class TestController extends Controller
   {
     // Eloquent（エロクアント）
     $values = Test::all();
-    $count = Test::count();
-    $first = Test::findOrFail(1);
-    $whereBBB = Test::where("text", "=", "bbb")->get();
+    // $count = Test::count();
+    // $first = Test::findOrFail(1);
+    // $whereBBB = Test::where("text", "=", "bbb")->get();
 
     // dd($values);
 
-    return view("tests.test", compact("values"));
+    return view('tests.test', compact('values'));
   }
 }
