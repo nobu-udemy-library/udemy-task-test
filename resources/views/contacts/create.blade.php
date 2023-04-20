@@ -10,6 +10,7 @@
       <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
         <div class="p-6 text-gray-900">
           {{-- ContactForm --}}
+          <x-input-error :messages="$errors->all()" class="mt-2" />
           <section class="text-gray-600 body-font relative">
             <form method="post" action="{{ route('contacts.store') }}">
               @csrf
