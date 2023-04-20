@@ -12,11 +12,18 @@ class DatabaseSeeder extends Seeder
    *
    * @return void
    */
+
   public function run()
   {
-    $this->call([TestSeeder::class, UserSeeder::class]);
+    //* リレーションを設定する時は、並び順を親から並べること（1対多）などは1が先
+    $this->call([
+      TestSeeder::class,
+      UserSeeder::class,
+      AreaSeeder::class,
+      ShopSeeder::class,
+    ]);
 
-    // Factoryを使ってダミーデータを作成する
+    //* Factoryを使ってダミーデータを作成する
     \App\Models\ContactForm::factory(100)->create();
 
     // \App\Models\User::factory()->create([
