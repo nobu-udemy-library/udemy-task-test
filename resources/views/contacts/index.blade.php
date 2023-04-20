@@ -44,6 +44,9 @@
                 @endforeach
               </tbody>
             </table>
+            <div class="mt-10">
+              {{ $contacts->links() }}
+            </div>
           </div>
         </div>
       </div>
