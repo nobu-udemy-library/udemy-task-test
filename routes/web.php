@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\ContactFormController;
+use App\Http\Controllers\ShopController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +19,12 @@ use App\Http\Controllers\ContactFormController;
 
 Route::get('/tests/test', [TestController::class, 'index']);
 
+Route::get('/shops', [ShopController::class, 'index']);
+
+// * リソースコントローラで一括ルーティング指定
 // Route::resource('contacts', ContactFormController::class);
 
-// グループ化することで、スコープ内のルーティングに同じ設定を適用出来る！
+// * グループ化することで、スコープ内のルーティングに同じ設定を適用出来る！
 Route::prefix('contacts')
   ->middleware(['auth'])
   ->controller(ContactFormController::class)
