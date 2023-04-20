@@ -16,7 +16,7 @@ return new class extends Migration {
       $table->id();
       $table->string('name');
       //* 外部ーを使用
-      $table->foreignId('area_id');
+      $table->foreignId('area_id')->constrained();
       $table->timestamps();
     });
   }
