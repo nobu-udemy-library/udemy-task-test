@@ -16,7 +16,8 @@ class DatabaseSeeder extends Seeder
   {
     $this->call([TestSeeder::class, UserSeeder::class]);
 
-    // \App\Models\User::factory(10)->create();
+    // Factoryを使ってダミーデータを作成する
+    \App\Models\ContactForm::factory(100)->create();
 
     // \App\Models\User::factory()->create([
     //     'name' => 'Test User',
