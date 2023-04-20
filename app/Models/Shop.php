@@ -14,4 +14,10 @@ class Shop extends Model
   {
     return $this->belongsTo(Area::class);
   }
+
+  // * リレーション設定 多対多の関係
+  public function routes()
+  {
+    return $this->belongsToMany(Route::class);
+  }
 }
